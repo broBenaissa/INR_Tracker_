@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.Suivez_INR"
+    android:id="@+id/graph_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".les_7_regles_d_or">
+
+
+
+</RelativeLayout>

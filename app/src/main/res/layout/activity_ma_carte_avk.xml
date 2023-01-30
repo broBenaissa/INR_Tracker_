@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ma_carte_AVK">
+
+
+    <android.widget.GridView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@drawable/logo"
+        android:theme="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        design:itemIconTint="@color/purple_200"
+        design:itemTextColor="@color/purple_700"
+        design:labelVisibilityMode="labeled"
+        tools:listitem="@layout/activity_login" />
+
+
+</LinearLayout>
