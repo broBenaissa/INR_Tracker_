@@ -27,14 +27,8 @@ public class MainActivity extends AppCompatActivity {
        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
        setContentView(R.layout.activity_main);
 
-        imageView = findViewById(R.id.image);
-        textView1 = findViewById(R.id.text1);
-        textView2 = findViewById(R.id.text2);
-
-       // top= AnimationUtils.loadAnimation(this,R.anim.splash_top);
-        //bottom=AnimationUtils.loadAnimation(this,R.anim.splash_bottom);
-
-       imageView.setAnimation(top);
+       textView1 = findViewById(R.id.text1);
+       textView2 = findViewById(R.id.text2);
        textView1.setAnimation(bottom);
        textView2.setAnimation(bottom);
 

@@ -8,14 +8,12 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-
 import java.util.ArrayList;
 
 
 public class Mon_Graphique_INR extends AppCompatActivity  {
 
     private BarChart barChart;
-    connectionSQL conn ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +34,17 @@ public class Mon_Graphique_INR extends AppCompatActivity  {
         arrayList.add(new BarEntry(13,45));
         arrayList.add(new BarEntry(15,5));
 
-
-
-
         BarDataSet  barDataSet = new BarDataSet(arrayList ,"arrayList");
+
+
+
 
         BarData barData = new BarData(barDataSet);
         barChart.setData(barData);
         barChart.setData(barData);
         barChart.getDescription().setText("BarEntry Graphe");
-        barChart.animateY(2000);
-       // lineData.invalidate();
+        barChart.animateY(200);
+
     }
 }
+

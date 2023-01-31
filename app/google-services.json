@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "621652321135",
+    "project_id": "suivez-inr",
+    "storage_bucket": "suivez-inr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621652321135:android:69bc8289d01ac4c604fe9a",
+        "android_client_info": {
+          "package_name": "com.example.suivez_inr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621652321135-tjok2btosc949lvi3vdnc768m8aea9jf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkMoroSVK_1hLG1sBXmk1dPVFSaj2HJjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621652321135-tjok2btosc949lvi3vdnc768m8aea9jf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

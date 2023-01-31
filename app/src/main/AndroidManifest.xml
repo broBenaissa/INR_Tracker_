@@ -20,20 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".les_7_regles_d_or"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Mon_Tableau_INR"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Mon_Graphique_INR"
             android:exported="false">
             <meta-data

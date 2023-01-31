@@ -30,7 +30,7 @@
         android:background="@android:drawable/button_onoff_indicator_off"
         android:drawableLeft="@android:drawable/ic_menu_myplaces"
         android:ems="10"
-        android:hint="userID"
+        android:hint="your Token"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="#293B9E"

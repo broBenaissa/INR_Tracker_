@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class home extends AppCompatActivity {
 
-    TextView mesInfo,table,graphique,regles,carte;
+    TextView mesInfo,table,graphique,carte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,6 @@ public class home extends AppCompatActivity {
         table= findViewById(R.id.tableINR);
         graphique = findViewById(R.id.graphiqueINR);
         carte = findViewById(R.id.carteAVK);
-        regles = findViewById(R.id.regles);
         ImageView Logout = findViewById(R.id.logout);
 
 
@@ -32,12 +31,7 @@ public class home extends AppCompatActivity {
             }
         });
 
-        table.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Mon_Tableau_INR.class));
-            }
-        });
+
 
         graphique.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +40,7 @@ public class home extends AppCompatActivity {
             }
         });
 
-        regles.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),les_7_regles_d_or.class));
-            }
-        });
+
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
