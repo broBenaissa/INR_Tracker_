@@ -1,21 +1,19 @@
 package com.example.suivez_inr.models;
 
-import java.sql.Date;
-import java.time.LocalDateTime;
+public class BarEntry {
 
-public class INR {
-
-    private LocalDateTime date;
+    private double date;
     private double INR_val;
-    public INR(double INR_val, Date date) {
+    public BarEntry(double INR_val, double date) {
         this.INR_val = INR_val;
+        this.date=date;
     }
 
     public double getINR_val() {
         return INR_val;
     }
 
-    public LocalDateTime getDate() {
+    public double getDate() {
         return date;
     }
 }
