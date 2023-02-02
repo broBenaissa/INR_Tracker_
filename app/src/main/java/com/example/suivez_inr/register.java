@@ -16,14 +16,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.suivez_inr.models.user;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
@@ -33,11 +37,14 @@ public class register extends AppCompatActivity {
 
     private EditText userID;
     private EditText pass;
+    private EditText pass2;
     private EditText name;
+    private user myUser;
     private TextView register;
     private TextView Signin;
     private FirebaseAuth mAuth;
-
+    private DatabaseReference myRef;
+    private FirebaseDatabase database;
 
 
     @Override
@@ -46,12 +53,7 @@ public class register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        mAuth=FirebaseAuth.getInstance();
-
-        registration();
-
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
-
         //spinner.setOnItemSelectedListener(d);
         List<String> categories = new ArrayList<String>();
         categories.add("doctor");
@@ -65,12 +67,13 @@ public class register extends AppCompatActivity {
 
 
 
-    }
 
-     private void registration(){
+
+
         userID = findViewById(R.id.userID);
         name=findViewById(R.id.name);
         pass=findViewById(R.id.password);
+        pass2=findViewById(R.id.password2);
         register= findViewById(R.id.registerMe);
         Signin = findViewById(R.id.have);
 
@@ -87,73 +90,70 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String Token=userID.getText().toString().trim();
-                String password = pass.getText().toString().trim();
+                String nom=name.getText().toString();
+                String password2=userID.getText().toString();
+                String password = pass.getText().toString();
+                database = FirebaseDatabase.getInstance();
+                myRef = database.getReference("User");
                 if(TextUtils.isEmpty(Token)){
                     Toast.makeText(getApplicationContext(),"please get your Token from Doctor",Toast.LENGTH_SHORT).show();
                 }
-                if(TextUtils.isEmpty(password)){
+                else if(TextUtils.isEmpty(password)){
                     Toast.makeText(getApplicationContext(),"please enter password",Toast.LENGTH_SHORT).show();
 
                 }
-                if(password.length()<6)
+                else if(password.length()<6)
                 {
                     Toast.makeText(getApplicationContext(),"please enter a stong password",Toast.LENGTH_SHORT).show();
-
                 }
-
-                mAuth.createUserWithEmailAndPassword(Token,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                else if (!password.equals(password2)) {
+                    Toast.makeText(getApplicationContext(),"password not muched",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (checkUser(snapshot,Token)){
+                            myUser = new user(Token,nom,password);
+                            myRef.child(Token).setValue(myUser);
+                            userID.setText("");
+                            name.setText("");
+                            pass.setText("");
+                            pass2.setText("");
+                            Toast.makeText(register.this,"Data inserted",Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(register.this,login.class);
+                            startActivity(i);
+                        }else {
+                            Toast.makeText(register.this,"User Name Already Exists",Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });}
 
 
-                            userID=findViewById(R.id.userID);
-                            String Token=userID.getText().toString().trim();
-                            FirebaseUser mUser=mAuth.getCurrentUser();
-                            if(mAuth!=null) {
-                                String uid = mUser.getUid();
-                                DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference().child("UserInfo").child(uid);
-                                DatabaseReference userNameRef =  myRootRef.child("Token");
-                                userNameRef.setValue(Token);
-                                Toast.makeText(getApplicationContext(),"valid ..",Toast.LENGTH_SHORT).show();
 
 
-                            }
-                        }
-                        else {
-
-                            Toast.makeText(getApplicationContext(),"Registration failed..",Toast.LENGTH_SHORT).show();
-
-                        }
                     }
 
                 });
-            }
-        });
     }
 
-             /*   @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
 
-                        muserid=findViewById(R.id.userID);
-                        String userid = muserid.getText().toString().trim();
-                        FirebaseUser mUser=mAuth.getCurrentUser();
-                        if(mAuth!=null) {
-                            String uid = mUser.getUid();
-                            DatabaseReference myRootRef = FirebaseDatabase.getInstance().getReference().child("UserInfo").child(uid);
-                            DatabaseReference userNameRef =  myRootRef.child("Email");
-                            userNameRef.setValue(uid);
-                            Toast.makeText(getApplicationContext(),"regestered succesfull!!",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),login.class));
-                            finish();
-                        }
-                    }
-                }
-
-*/
-    /*public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+private boolean checkUser(DataSnapshot snapshot,String user) {
+        String user1;
+        for (DataSnapshot ds: snapshot.getChildren()){
+        user1 =ds.child("Token").getValue(String.class);
+        if (user.equals(user1)){
+        return false;
+        }
+        }
+        return true;
+        }
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
 
@@ -162,19 +162,7 @@ public class register extends AppCompatActivity {
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
-    }*/
+    }
 
 
-/*mUser.getIdToken(true)
-    .addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
-        public void onComplete(@NonNull Task<GetTokenResult> task) {
-            if (task.isSuccessful()) {
-                String idToken = task.getResult().getToken();
-                // Send token to your backend via HTTPS
-                // ...
-            } else {
-                // Handle error -> task.getException();
-            }
-        }
-    });*/
 }
