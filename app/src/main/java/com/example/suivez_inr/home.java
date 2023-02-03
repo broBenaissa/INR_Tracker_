@@ -31,8 +31,6 @@ public class home extends AppCompatActivity {
             }
         });
 
-
-
         graphique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

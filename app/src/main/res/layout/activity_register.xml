@@ -4,59 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BFBDBD"
+    android:backgroundTint="#B6B5B5"
     tools:context=".register">
 
     <TextView
-        android:id="@+id/register"
-        android:layout_width="115dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_vertical"
-        android:hint="register"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/userID"
+        android:id="@+id/have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="already have account"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/registerMe" />
 
-    <EditText
-        android:id="@+id/userID"
-        android:layout_width="221dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:drawableLeft="@android:drawable/ic_menu_myplaces"
-        android:ems="10"
-        android:hint="your Token"
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/registerMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/button_onoff_indicator_on"
         android:padding="10dp"
-        android:textColor="#293B9E"
+        android:shadowColor="#DFD9D9"
+        android:text="register"
+        android:textAlignment="center"
+        android:textColor="#795548"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/password2"
-        android:layout_width="221dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="304dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:drawableStart="@android:drawable/ic_lock_lock"
-        android:ems="10"
-        android:hint="confirme password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="#293B9E"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.614"
+        app:strokeColor="#F4F4F4"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/password"
@@ -98,41 +81,58 @@
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/registerMe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/button_onoff_indicator_on"
+    <EditText
+        android:id="@+id/password2"
+        android:layout_width="221dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="272dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:drawableStart="@android:drawable/ic_lock_lock"
+        android:ems="10"
+        android:hint="confirme password"
+        android:inputType="textPassword"
         android:padding="10dp"
-        android:shadowColor="#DFD9D9"
-        android:text="register"
-        android:textAlignment="center"
-        android:textColor="#795548"
+        android:textColor="#293B9E"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/userID"
+        android:layout_width="221dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:drawableLeft="@android:drawable/ic_menu_myplaces"
+        android:ems="10"
+        android:hint="your Token"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="#293B9E"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667"
-        app:strokeColor="#F4F4F4"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/have"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="already have account"
-        android:textColor="@color/purple_700"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/register"
+        android:layout_width="115dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_vertical"
+        android:hint="register"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/userID"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerMe"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -142,7 +142,20 @@
         app:layout_constraintBottom_toTopOf="@+id/registerMe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2" />
+        app:layout_constraintTop_toBottomOf="@+id/password2"
+        app:layout_constraintVertical_bias="0.583" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="415dp"
+        android:layout_height="185dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/have"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/a" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

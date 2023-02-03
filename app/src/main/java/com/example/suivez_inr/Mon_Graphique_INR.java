@@ -19,8 +19,6 @@ public class Mon_Graphique_INR extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mon_graphique_inr);
 
-
-
        barChart = findViewById(R.id.barChart);
 
        ArrayList<BarEntry> arrayList = new ArrayList<>();arrayList.add(new BarEntry(2,3));

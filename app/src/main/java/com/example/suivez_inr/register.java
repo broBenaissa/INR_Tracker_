@@ -62,14 +62,6 @@ public class register extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
-
-
-
-
-
-
-
-
         userID = findViewById(R.id.userID);
         name=findViewById(R.id.name);
         pass=findViewById(R.id.password);
@@ -91,7 +83,7 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
                 String Token=userID.getText().toString().trim();
                 String nom=name.getText().toString();
-                String password2=userID.getText().toString();
+                String password2=pass2.getText().toString();
                 String password = pass.getText().toString();
                 database = FirebaseDatabase.getInstance();
                 myRef = database.getReference("User");

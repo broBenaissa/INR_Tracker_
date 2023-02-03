@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#E8E7E7"
     tools:context=".login">
 
     <TextView
@@ -13,7 +14,7 @@
         android:text="LOGING"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-        android:textSize="34sp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,7 +31,7 @@
         android:background="@android:drawable/button_onoff_indicator_off"
         android:drawableLeft="@android:drawable/ic_menu_myplaces"
         android:ems="10"
-        android:hint="userID"
+        android:hint="your username"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="#293B9E"
@@ -115,14 +116,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="407dp"
-        android:layout_height="257dp"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
         app:layout_constraintBottom_toTopOf="@+id/textviewlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/a" />
+        app:srcCompat="@drawable/login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
