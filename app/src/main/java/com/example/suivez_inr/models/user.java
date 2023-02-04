@@ -9,11 +9,15 @@ public class user {
     private String name;
     private String password;
 
+    public user() {
+    }
+
     public user(String token, String name, String password) {
         this.token = token;
         this.name = name;
         this.password = password;
     }
+
 
     public String getToken() {
         return token;

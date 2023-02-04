@@ -29,7 +29,7 @@ public class Mon_Graphique_INR extends AppCompatActivity  {
         arrayList.add(new BarEntry(2,4));
         arrayList.add(new BarEntry(14,7));
         arrayList.add(new BarEntry(12,5));
-        arrayList.add(new BarEntry(13,45));
+        arrayList.add(new BarEntry(13,4));
         arrayList.add(new BarEntry(15,5));
 
         BarDataSet  barDataSet = new BarDataSet(arrayList ,"arrayList");

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Suivez_INR</string>
+    <string name="app_name">INR_Tracker</string>
     <string name="title">INR_Tracker</string>
     <string name="description">Make your life better</string>
 </resources>

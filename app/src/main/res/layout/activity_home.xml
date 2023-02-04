@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgreen"
-    android:backgroundTint="#E8E7E7"
     tools:context=".home">
 
     <TextView
@@ -13,65 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/carteAVK"
-        android:layout_marginBottom="4dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:text="Mes Informations"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tableINR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/regles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tableINR"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="84dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:text="les 7 regles d'or"
-        android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tableINR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/regles"
-        android:layout_alignLeft="@+id/graphiqueINR"
-        android:layout_marginTop="380dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:text="Mon tableau INR"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/graphiqueINR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <TextView
         android:id="@+id/graphiqueINR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tableINR"
         android:layout_below="@+id/mesInfo"
         android:layout_alignLeft="@+id/mesInfo"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:text="Mon graphique INR"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/carteAVK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/mesInfo"
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/carteAVK"
@@ -79,24 +47,27 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/mesInfo"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="4dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:text="Ma carte AVK"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/regles"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mesInfo"
+        app:layout_constraintVertical_bias="0.201" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="417dp"
         android:layout_height="328dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/mesInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hom" />
 
     <TextView

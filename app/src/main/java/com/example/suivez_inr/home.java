@@ -10,14 +10,13 @@ import android.widget.TextView;
 
 public class home extends AppCompatActivity {
 
-    TextView mesInfo,table,graphique,carte;
+    TextView mesInfo,graphique,carte;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         mesInfo = findViewById(R.id.mesInfo);
-        table= findViewById(R.id.tableINR);
         graphique = findViewById(R.id.graphiqueINR);
         carte = findViewById(R.id.carteAVK);
         ImageView Logout = findViewById(R.id.logout);

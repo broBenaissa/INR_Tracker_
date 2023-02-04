@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgreen"
     android:overScrollMode="always"
     tools:context=".Mes_Information">
 
@@ -19,13 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:focusable="false"
-            android:hint="Name"
-            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -37,16 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.144">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText2"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:focusable="false"
-            android:hint="Mobile Number"
-            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -62,11 +48,47 @@
         app:layout_constraintVertical_bias="0.264">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            android:hint="Full Name"
+            android:inputType="text"
+            android:text="mohammed REDA" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText6"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:hint="Sex"
+            android:inputType="text"
+            android:text="M" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            android:hint="Mobile Number"
+            android:inputType="text"
+            android:text="12345678" />
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText3"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:hint="Age"
-            android:inputType="numberDecimal" />
+            android:hint="email"
+            android:inputType="textEmailAddress"
+            android:text="22" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText5"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:hint="ville actuelle"
+            android:inputType="text"
+            android:text="agadir" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -86,7 +108,8 @@
             android:id="@+id/editText4"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:hint="ATCD"
+            android:hint="adress"
+            android:text="sidi Belkass troudant agadir"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,12 +125,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.504">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText5"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:hint="Diagnostic"
-            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -122,24 +139,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.624">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText6"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:focusable="false"
-            android:hint="Traitement"
-            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_text_input7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Data"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_text_input6"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

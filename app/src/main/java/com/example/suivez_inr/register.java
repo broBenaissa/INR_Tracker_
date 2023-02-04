@@ -3,26 +3,19 @@ package com.example.suivez_inr;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.suivez_inr.models.user;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,11 +51,12 @@ public class register extends AppCompatActivity {
         List<String> categories = new ArrayList<String>();
         categories.add("doctor");
         categories.add("patient");
+        categories.add("other");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
-        userID = findViewById(R.id.userID);
+        userID = findViewById(R.id.username);
         name=findViewById(R.id.name);
         pass=findViewById(R.id.password);
         pass2=findViewById(R.id.password2);
@@ -74,7 +68,6 @@ public class register extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(getApplicationContext(),login.class);
                 startActivity(intent);
-                finish();
             }
         });
 
